@@ -610,6 +610,41 @@ int MOAIProp::_setVisible ( lua_State* L ) {
 	return 0;
 }
 
+//----------------------------------------------------------------//
+/**	@name	setMatrixTransform
+	@text	Sets the matrix transformation.
+	
+	@in		MOAIProp self
+	@opt	number m00		Matrix 00.
+	@opt	number m01		Matrix 01.
+	@opt	number m02		Matrix 02.
+	@opt	number m10		Matrix 10.
+	@opt	number m11		Matrix 11.
+	@opt	number m12		Matrix 12.
+	@opt	number m20		Matrix 20.
+	@opt	number m21		Matrix 21.
+	@opt	number m22		Matrix 22.
+	@out	nil
+*/
+int MOAIProp::_setMatrixTransform ( lua_State* L ) {
+	MOAI_LUA_SETUP ( MOAIProp, "U" )
+
+	float m00 = state.GetValue < float >( 2, 1.0f );
+	float m01 = state.GetValue < float >( 3, 0.0f );
+	float m02 = state.GetValue < float >( 4, 0.0f );
+	float m10 = state.GetValue < float >( 5, 0.0f );
+	float m11 = state.GetValue < float >( 6, 1.0f );
+	float m12 = state.GetValue < float >( 7, 0.0f );
+	float m20 = state.GetValue < float >( 8, 0.0f );
+	float m21 = state.GetValue < float >( 9, 0.0f );
+	float m22 = state.GetValue < float >( 10, 1.0f );
+	self->SetMatrixTransform ( m00, m01, m02, m10, m11, m12, m20, m21, m22 );
+
+	return 0;
+}
+
+
+
 //================================================================//
 // MOAIProp
 //================================================================//
@@ -832,10 +867,13 @@ void MOAIProp::DrawItem () {
 		USAffine3D billboardMtx;	
 		billboardMtx.Init ( gfxDevice.GetBillboardMtx ());
 		billboardMtx = this->GetBillboardMtx ( billboardMtx );
-		gfxDevice.SetVertexTransform ( MOAIGfxDevice::VTX_WORLD_TRANSFORM, billboardMtx );
+		mFinalMatrixTransform.Multiply(billboardMtx, mMatrixTransform);
+		gfxDevice.SetVertexTransform ( MOAIGfxDevice::VTX_WORLD_TRANSFORM, mFinalMatrixTransform );
 	}
 	else {
-		gfxDevice.SetVertexTransform ( MOAIGfxDevice::VTX_WORLD_TRANSFORM, this->GetLocalToWorldMtx ());
+
+		mFinalMatrixTransform.Multiply(this->GetLocalToWorldMtx (), mMatrixTransform);
+		gfxDevice.SetVertexTransform ( MOAIGfxDevice::VTX_WORLD_TRANSFORM, mFinalMatrixTransform);
 	}
 	
 	this->mDeck->Draw ( this->mIndex, this->mRemapper );
@@ -1028,6 +1066,7 @@ MOAIProp::MOAIProp () :
 	
 	this->mLinkInCell.Data ( this );
 	this->mBounds.Init ( 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f );
+	this->mMatrixTransform.Ident();
 }
 
 //----------------------------------------------------------------//
@@ -1140,6 +1179,7 @@ void MOAIProp::RegisterLuaFuncs ( MOAILuaState& state ) {
 		{ "setTexture",			_setTexture },
 		{ "setUVTransform",		_setUVTransform },
 		{ "setVisible",			_setVisible },
+		{ "setMatrixTransform",	_setMatrixTransform },
 		{ NULL, NULL }
 	};
 	
@@ -1210,4 +1250,18 @@ void MOAIProp::UpdateBounds ( const USBox& bounds, u32 status ) {
 	if ( this->mPartition ) {
 		this->mPartition->UpdateProp ( *this, status );
 	}
+}
+
+//----------------------------------------------------------------//
+void MOAIProp::SetMatrixTransform ( float m00, float m01, float m02, float m10, float m11, float m12, float m20, float m21, float m22 ) {
+
+	this->mMatrixTransform.m[USAffine3D::C0_R0] = m00;
+	this->mMatrixTransform.m[USAffine3D::C1_R0] = m01;
+	this->mMatrixTransform.m[USAffine3D::C2_R0] = m02;
+	this->mMatrixTransform.m[USAffine3D::C0_R1] = m10;
+	this->mMatrixTransform.m[USAffine3D::C1_R1] = m11;
+	this->mMatrixTransform.m[USAffine3D::C2_R1] = m12;
+	this->mMatrixTransform.m[USAffine3D::C0_R2] = m20;
+	this->mMatrixTransform.m[USAffine3D::C1_R2] = m21;
+	this->mMatrixTransform.m[USAffine3D::C2_R2] = m22;
 }

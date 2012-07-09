@@ -121,6 +121,7 @@ private:
 	static int		_setTexture			( lua_State* L );
 	static int		_setUVTransform		( lua_State* L );
 	static int		_setVisible			( lua_State* L );
+	static int		_setMatrixTransform			( lua_State* L );
 
 	//----------------------------------------------------------------//
 	void			DrawGrid			( int subPrimID );
@@ -150,6 +151,8 @@ protected:
 
 	USBox									mBoundsOverride;
 
+	USAffine3D								mMatrixTransform;
+	USAffine3D								mFinalMatrixTransform;
 	//----------------------------------------------------------------//
 	u32				GetFrameFitting			( USBox& bounds, USVec3D& offset, USVec3D& scale );
 	void			GetGridBoundsInView		( MOAICellCoord& c0, MOAICellCoord& c1 );
@@ -157,7 +160,7 @@ protected:
 	void			LoadGfxState			();
 	void			UpdateBounds			( u32 status );
 	void			UpdateBounds			( const USBox& bounds, u32 status );
-
+	void			SetMatrixTransform		( float m00, float m01, float m02, float m10, float m11, float m12, float m20, float m21, float m22 );
 public:
 
 	DECL_LUA_FACTORY ( MOAIProp )
