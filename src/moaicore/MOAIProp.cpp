@@ -867,12 +867,12 @@ void MOAIProp::DrawItem () {
 		USAffine3D billboardMtx;	
 		billboardMtx.Init ( gfxDevice.GetBillboardMtx ());
 		billboardMtx = this->GetBillboardMtx ( billboardMtx );
-		mFinalMatrixTransform.Multiply(billboardMtx, mMatrixTransform);
+		mFinalMatrixTransform.Multiply(mMatrixTransform, billboardMtx);
 		gfxDevice.SetVertexTransform ( MOAIGfxDevice::VTX_WORLD_TRANSFORM, mFinalMatrixTransform );
 	}
 	else {
 
-		mFinalMatrixTransform.Multiply(this->GetLocalToWorldMtx (), mMatrixTransform);
+		mFinalMatrixTransform.Multiply(mMatrixTransform, this->GetLocalToWorldMtx ());
 		gfxDevice.SetVertexTransform ( MOAIGfxDevice::VTX_WORLD_TRANSFORM, mFinalMatrixTransform);
 	}
 	
