@@ -92,6 +92,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>CompileAsC</CompileAs>
       <ForcedIncludeFiles>"zlcore/zl_replace.h"</ForcedIncludeFiles>
+      <DisableSpecificWarnings>4335</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -133,6 +134,7 @@
       </DebugInformationFormat>
       <CompileAs>CompileAsC</CompileAs>
       <ForcedIncludeFiles>"zlcore/zl_replace.h"</ForcedIncludeFiles>
+      <DisableSpecificWarnings>4335</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>

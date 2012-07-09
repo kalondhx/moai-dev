@@ -95,8 +95,7 @@
       <CallingConvention>Cdecl</CallingConvention>
       <CompileAs>CompileAsCpp</CompileAs>
       <ForcedIncludeFiles>"zlcore/zl_replace.h"</ForcedIncludeFiles>
-      <DisableSpecificWarnings>
-      </DisableSpecificWarnings>
+      <DisableSpecificWarnings>4335</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -119,8 +118,7 @@
       </DebugInformationFormat>
       <CompileAs>CompileAsCpp</CompileAs>
       <ForcedIncludeFiles>"zlcore/zl_replace.h"</ForcedIncludeFiles>
-      <DisableSpecificWarnings>
-      </DisableSpecificWarnings>
+      <DisableSpecificWarnings>4335</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>

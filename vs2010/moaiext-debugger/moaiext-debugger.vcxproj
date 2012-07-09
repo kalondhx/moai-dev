@@ -99,6 +99,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ShowIncludes>false</ShowIncludes>
       <ForcedIncludeFiles>"zlcore/zl_replace.h"</ForcedIncludeFiles>
+      <DisableSpecificWarnings>4335</DisableSpecificWarnings>
     </ClCompile>
     <ProjectReference />
     <PostBuildEvent>
@@ -126,6 +127,7 @@
       <DebugInformationFormat>
       </DebugInformationFormat>
       <ForcedIncludeFiles>"zlcore/zl_replace.h"</ForcedIncludeFiles>
+      <DisableSpecificWarnings>4335</DisableSpecificWarnings>
     </ClCompile>
     <ProjectReference />
     <PostBuildEvent>

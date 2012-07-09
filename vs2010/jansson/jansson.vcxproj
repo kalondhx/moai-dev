@@ -98,6 +98,7 @@
       <CompileAs>CompileAsC</CompileAs>
       <ShowIncludes>false</ShowIncludes>
       <ForcedIncludeFiles>"zlcore/zl_replace.h"</ForcedIncludeFiles>
+      <DisableSpecificWarnings>4335</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>
@@ -163,6 +164,7 @@ xcopy /yr "$(OutDir)$(TargetName).pdb" "..\..\bin\$(Platform)\$(Configuration)\"
       </DebugInformationFormat>
       <CompileAs>CompileAsC</CompileAs>
       <ForcedIncludeFiles>"zlcore/zl_replace.h"</ForcedIncludeFiles>
+      <DisableSpecificWarnings>4335</DisableSpecificWarnings>
     </ClCompile>
     <PostBuildEvent>
       <Command>
