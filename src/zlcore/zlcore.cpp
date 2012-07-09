@@ -492,7 +492,9 @@ ZLFILE* zl_fopen ( const char* filename, const char* mode ) {
 	errno_t zl_fopen_s ( ZLFILE** fp, const char* filename, const char* mode ) {
 
 		*fp = zl_fopen ( filename, mode );
-		return errno;
+		if(*fp != 0)
+			return 0;
+		return 1;
 	}
 #endif
 
