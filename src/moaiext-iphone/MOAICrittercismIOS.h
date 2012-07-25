@@ -3,7 +3,7 @@
 
 #ifndef	MOAICRITTERCISMIOS_H
 #define	MOAICRITTERCISMIOS_H
-
+#define DISABLE_CRITTERCISM
 #ifndef DISABLE_CRITTERCISM
 
 #import <Foundation/Foundation.h> 

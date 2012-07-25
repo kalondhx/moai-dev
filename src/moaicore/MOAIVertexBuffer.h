@@ -35,7 +35,8 @@ private:
 	static int		_writeFloat				( lua_State* L );
 	static int		_writeInt8				( lua_State* L );
 	static int		_writeInt16				( lua_State* L );
-	static int		_writeInt32				( lua_State* L );
+		static int		_writeInt32				( lua_State* L );
+		static int		_writeVerts				( lua_State* L );
 
 	//----------------------------------------------------------------//
 	void			Clear					();

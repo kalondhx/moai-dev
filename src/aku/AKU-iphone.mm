@@ -1,6 +1,6 @@
 // Copyright (c) 2010-2011 Zipline Games, Inc. All Rights Reserved.
 // http://getmoai.com
-
+#define DISABLE_CRITTERCISM
 #import <aku/AKU-iphone.h>
 #import <moaiext-iphone/moaiext-iphone.h>
 

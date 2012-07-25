@@ -215,6 +215,52 @@ int MOAIVertexBuffer::_writeInt32 ( lua_State* L ) {
 	return 0;
 }
 
+int	MOAIVertexBuffer::_writeVerts( lua_State* L )
+{
+	MOAI_LUA_SETUP( MOAIVertexBuffer, "UTN" );
+	u32 endDataIndex = state.GetValue<u32>(3,1);
+	int itr = state.PushTableItr(2);
+	int idx = 0;
+	u32 total = 0;
+	
+	idx = 0;
+	//printf("WRITE VERTS %d, %d\n", idx, endDataIndex);
+	for(; state.TableItrNext(itr) && idx< endDataIndex; ++idx ) {
+		float val = ( float )lua_tonumber ( L, -1 ); //state.GetValue<float>(-1,0);
+		
+		//self->mBuffer[idx] = val;		
+		int modIndex = idx%7;
+		//printf("value %d: %f %d\n", idx, val, modIndex );
+		if(((modIndex)) == 4)
+		{
+			
+			u32 color = USColor::PackRGBA ( 1.0f, 1.0f, 1.0f, 1.0f );
+			self->mStream.Write < u32 >( color );
+		}
+		else if(((modIndex)) == 5 || ((modIndex)) == 6)
+		{
+			
+		}
+		else
+		{
+			self->mStream.Write < float >(( float )val );
+		}
+	}
+	
+	/*MOAI_LUA_SETUP ( MOAIVertexBuffer, "U" )
+	
+	u32 top = state.GetTop ();
+	for ( u32 i = 2; i <= top; ++i ) {
+		float param = state.GetValue < float >( i, 0.0f );
+		self->mStream.Write < float >( param );
+	}*/
+	return 0;	
+	
+	
+	
+	
+}
+
 //================================================================//
 // MOAIGfxQuadListDeck2D
 //================================================================//
@@ -285,6 +331,9 @@ void MOAIVertexBuffer::RegisterLuaFuncs ( MOAILuaState& state ) {
 		{ "writeInt8",				_writeInt8 },
 		{ "writeInt16",				_writeInt16 },
 		{ "writeInt32",				_writeInt32 },
+		{ "writeVerts",				_writeVerts },
+		
+		
 		{ NULL, NULL }
 	};
 	

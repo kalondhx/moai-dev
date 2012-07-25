@@ -391,7 +391,6 @@
 		E92D48CD153CADD700CB1E8A /* crittercism-user-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = E92D488C153CADD700CB1E8A /* crittercism-user-profile.png */; };
 		E92D48CE153CADD700CB1E8A /* crittercism-user-profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E92D488D153CADD700CB1E8A /* crittercism-user-profile@2x.png */; };
 		E92D48CF153CADD700CB1E8A /* crittercism-votesLeftButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E92D488E153CADD700CB1E8A /* crittercism-votesLeftButton.png */; };
-		E92D48D2153CAE6F00CB1E8A /* libCrittercism_v3_1_5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E92D48D1153CAE6F00CB1E8A /* libCrittercism_v3_1_5.a */; };
 		E96915DC1561D57C007E977B /* libmoai-ios-fmod-ex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD508AA7155E3AF90002FC3B /* libmoai-ios-fmod-ex.a */; };
 		E9AA1FC714D9D2140086E9DE /* CrittercismAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AA1FC014D9D2140086E9DE /* CrittercismAboutViewController.xib */; };
 		E9AA1FC814D9D2140086E9DE /* CrittercismAddCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9AA1FC114D9D2140086E9DE /* CrittercismAddCommentViewController.xib */; };
@@ -825,7 +824,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E92D48D2153CAE6F00CB1E8A /* libCrittercism_v3_1_5.a in Frameworks */,
 				6676D5D415100473004EA27A /* libfacebook_ios_sdk.a in Frameworks */,
 				07E9F73E13B50582006396F3 /* libmoai-ios.a in Frameworks */,
 				07E9F73F13B50582006396F3 /* libmoai-ios-3rdparty.a in Frameworks */,

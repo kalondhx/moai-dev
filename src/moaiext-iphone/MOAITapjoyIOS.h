@@ -3,7 +3,7 @@
 
 #ifndef	MOAITAPJOYIOS_H
 #define	MOAITAPJOYIOS_H
-
+#define DISABLE_TAPJOY
 #ifndef DISABLE_TAPJOY
 
 #import <Foundation/Foundation.h> 
