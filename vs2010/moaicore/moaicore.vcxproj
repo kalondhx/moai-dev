@@ -324,6 +324,7 @@
     <ClCompile Include="..\..\src\moaicore\MOAILuaRuntime.cpp" />
     <ClCompile Include="..\..\src\moaicore\MOAILuaState.cpp" />
     <ClCompile Include="..\..\src\moaicore\MOAILuaStateHandle.cpp" />
+    <ClCompile Include="..\..\src\moaicore\MOAIMD5.cpp" />
     <ClCompile Include="..\..\src\moaicore\MOAIMemStream.cpp" />
     <ClCompile Include="..\..\src\moaicore\MOAIMesh.cpp" />
     <ClCompile Include="..\..\src\moaicore\MOAIMotionSensor.cpp" />
@@ -505,6 +506,7 @@
     <ClInclude Include="..\..\src\moaicore\MOAILuaState-impl.h" />
     <ClInclude Include="..\..\src\moaicore\MOAILuaState.h" />
     <ClInclude Include="..\..\src\moaicore\MOAILuaStateHandle.h" />
+    <ClInclude Include="..\..\src\moaicore\MOAIMD5.h" />
     <ClInclude Include="..\..\src\moaicore\MOAIMemStream.h" />
     <ClInclude Include="..\..\src\moaicore\MOAIMesh.h" />
     <ClInclude Include="..\..\src\moaicore\MOAIMotionSensor.h" />
