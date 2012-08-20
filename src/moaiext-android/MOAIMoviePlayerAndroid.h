@@ -23,7 +23,7 @@ private:
 	static int	_pause			( lua_State* L );
 	static int	_setListener	( lua_State* L );
 	static int	_stop			( lua_State* L );
-	
+	static int _setVolume ( lua_State* L );
 public:
 
 	DECL_LUA_SINGLETON ( MOAIMoviePlayerAndroid );

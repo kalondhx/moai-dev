@@ -158,6 +158,33 @@ int MOAIMoviePlayerAndroid::_stop ( lua_State* L ) {
 	return 0;
 }
 
+
+int MOAIMoviePlayerAndroid::_setVolume ( lua_State* L ) {
+	
+	MOAILuaState state ( L );
+	float vol = state.GetValue < float >( 1, 1.0 );
+
+	JNI_GET_ENV ( jvm, env );
+	jfloat jvol = vol;
+	jclass movie = env->FindClass ( "com/ziplinegames/moai/MoaiMoviePlayer" );
+    if ( movie == NULL ) {
+
+		USLog::Print ( "MOAIMoviePlayerAndroid: Unable to find java class %s", "com/ziplinegames/moai/MoaiMoviePlayer" );
+    } else {
+
+    	jmethodID stop = env->GetStaticMethodID ( movie, "setVolume", "(F)V" );
+    	if ( stop == NULL ) {
+
+			USLog::Print ( "MOAIMoviePlayerAndroid: Unable to find static java method %s", "stop" );
+    	} else {
+
+			env->CallStaticVoidMethod ( movie, stop, vol );
+		}
+	}
+	
+	return 0;
+}
+
 //================================================================//
 // MOAIMoviePlayerAndroid
 //================================================================//
@@ -185,6 +212,7 @@ void MOAIMoviePlayerAndroid::RegisterLuaClass ( MOAILuaState& state ) {
 		{ "play",			_play },
 		{ "setListener",	_setListener },
 		{ "stop",			_stop },
+		{ "setVolume",			_setVolume },
 		{ NULL, NULL }	
 	};
 
