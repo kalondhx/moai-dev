@@ -31,6 +31,7 @@ public:
 	enum {
 		MOVIE_PLAYER_READY,
 		MOVIE_PLAYER_COMPLETED,
+		MOVIE_PLAYER_ERROR,
 		TOTAL,
 	};
 	
@@ -40,6 +41,7 @@ public:
 			~MOAIMoviePlayerAndroid		();
 	void	NotifyMoviePlayerCompleted	();
 	void	NotifyMoviePlayerReady		();
+	void 	NotifyMoviePlayerError ();
 	void	RegisterLuaClass			( MOAILuaState& state );
 };
 

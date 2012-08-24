@@ -41,6 +41,7 @@ public:
 		MOAITexture_MemoryUse_SDFS,
 		MOAITexture_NoFramebuffer,
 		MOAITexture_NonPowerOfTwo_SDD,
+		MOADBox2D_InvalidType,
 	};
 	
 	//----------------------------------------------------------------//

@@ -792,6 +792,22 @@ int MOAIBox2DBody::_setFixedRotation ( lua_State* L ) {
 	return 0;
 }
 
+int MOAIBox2DBody::_setGravityScale ( lua_State* L ) {
+	MOAI_LUA_SETUP ( MOAIBox2DBody, "UN" )
+	
+	if ( !self->mBody ) {
+		MOAILog ( state, MOAILogMessages::MOAIBox2DBody_MissingInstance );
+		return 0;
+	}
+	
+	float damping = state.GetValue < float >( 2, 1.0f );
+	self->mBody->SetGravityScale ( damping );
+	
+	
+	return 0;
+}
+
+
 //----------------------------------------------------------------//
 /**	@name	setLinearDamping
 	@text	See Box2D documentation.
@@ -878,6 +894,49 @@ int MOAIBox2DBody::_setMassData ( lua_State* L ) {
 	
 	return 0;
 }
+
+
+//----------------------------------------------------------------//
+/**	@name	setType
+	@text	Changes the body's type.  DHX custom change to enable this method.  See Box2D documentation.
+	
+	@in		MOAIBox2DBody self
+	@in		number type
+	@out	nil
+*/
+int MOAIBox2DBody::_setType ( lua_State* L ) {
+	MOAI_LUA_SETUP ( MOAIBox2DBody, "U" )
+	float unitsToMeters = self->GetUnitsToMeters ();
+	
+	if ( !self->mBody ) {
+		MOAILog ( state, MOAILogMessages::MOAIBox2DBody_MissingInstance );
+		return 0;
+	}
+	
+	if ( self->mWorld->IsLocked ()) {
+		MOAILog ( state, MOAILogMessages::MOAIBox2DWorld_IsLocked );
+		return 0;
+	}
+	
+	//b2Vec2 position;
+	//position.x		= state.GetValue < float >( 2, 0.0f ) * unitsToMeters;
+	//position.y		= state.GetValue < float >( 3, 0.0f ) * unitsToMeters;
+	//float angle		= state.GetValue < float >( 4, 0.0f ) * ( float )D2R;
+	
+	//self->mBody->SetTransform ( position, angle );
+	//self->ScheduleUpdate ();
+	//float 
+
+	b2BodyType newType = (b2BodyType) state.GetValue< int >(2, b2_kinematicBody);
+	if (newType != b2_kinematicBody && newType != b2_dynamicBody && newType != b2_staticBody) {
+		MOAILog ( state, MOAILogMessages::MOADBox2D_InvalidType, newType);
+		return 0;
+	}
+	self->mBody->SetType(newType);
+	
+	return 0;
+}
+
 
 //----------------------------------------------------------------//
 /**	@name	setTransform
@@ -1015,6 +1074,8 @@ void MOAIBox2DBody::RegisterLuaFuncs ( MOAILuaState& state ) {
 		{ "setLinearVelocity",		_setLinearVelocity },
 		{ "setMassData",			_setMassData },
 		{ "setTransform",			_setTransform },
+		{ "setGravityScale",			_setGravityScale },
+		{ "setType",				_setType },
 		{ NULL, NULL }
 	};
 	

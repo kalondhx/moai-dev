@@ -205,6 +205,7 @@ void MOAIMoviePlayerAndroid::RegisterLuaClass ( MOAILuaState& state ) {
 
 	state.SetField ( -1, "MOVIE_PLAYER_READY", 		( u32 )MOVIE_PLAYER_READY );
 	state.SetField ( -1, "MOVIE_PLAYER_COMPLETED",	( u32 )MOVIE_PLAYER_COMPLETED );
+	state.SetField ( -1, "MOVIE_PLAYER_ERROR",	( u32 )MOVIE_PLAYER_ERROR );
 
 	luaL_Reg regTable[] = {
 		{ "init",			_init },
@@ -245,6 +246,20 @@ void MOAIMoviePlayerAndroid::NotifyMoviePlayerReady () {
 	}
 }
 
+
+//----------------------------------------------------------------//
+void MOAIMoviePlayerAndroid::NotifyMoviePlayerError () {
+	
+	MOAILuaRef& callback = this->mListeners [ MOVIE_PLAYER_ERROR ];
+		
+	if ( callback ) {
+		
+		MOAILuaStateHandle state = callback.GetSelf ();
+
+		state.DebugCall ( 0, 0 );
+	}
+}
+
 //================================================================//
 // Movie Player JNI methods
 //================================================================//
@@ -259,4 +274,11 @@ extern "C" void Java_com_ziplinegames_moai_MoaiMoviePlayer_AKUNotifyMoviePlayerC
 extern "C" void Java_com_ziplinegames_moai_MoaiMoviePlayer_AKUNotifyMoviePlayerReady ( JNIEnv* env, jclass obj ) {
 
 	MOAIMoviePlayerAndroid::Get ().NotifyMoviePlayerReady ();
+}
+
+
+//----------------------------------------------------------------//
+extern "C" void Java_com_ziplinegames_moai_MoaiMoviePlayer_AKUNotifyMoviePlayerError ( JNIEnv* env, jclass obj ) {
+
+	MOAIMoviePlayerAndroid::Get ().NotifyMoviePlayerError ();
 }

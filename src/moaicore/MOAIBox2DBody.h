@@ -59,10 +59,12 @@ private:
 	static int		_setAwake				( lua_State* L );
 	static int		_setBullet				( lua_State* L );
 	static int		_setFixedRotation		( lua_State* L );
+	static int		_setGravityScale		( lua_State* L );
 	static int		_setLinearDamping		( lua_State* L );
 	static int		_setLinearVelocity		( lua_State* L );
 	static int		_setMassData			( lua_State* L );
 	static int		_setTransform			( lua_State* L );
+	static int		_setType				( lua_State* L );
 	
 	//----------------------------------------------------------------//
 	bool			ApplyAttrOp				( u32 attrID, MOAIAttrOp& attrOp, u32 op );
