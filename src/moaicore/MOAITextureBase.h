@@ -60,6 +60,7 @@ protected:
 	size_t				mTextureSize;
 	
 	bool				mIsDirty;
+	bool				mSwapChannels;
 
 	//----------------------------------------------------------------//
 	static int		_getSize				( lua_State* L );

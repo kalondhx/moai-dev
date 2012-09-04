@@ -305,6 +305,9 @@
 		CDDD30781574AC7300C410A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CC911B13B3C49400B2724C /* SystemConfiguration.framework */; };
 		CDDD30791574AC7300C410A0 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07EF3E43147BAAA5006CFDCE /* Twitter.framework */; };
 		CDDD307A1574AC7300C410A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		DDAD08C115F67B6500A8E23F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDAD08BE15F67B6500A8E23F /* AVFoundation.framework */; };
+		DDAD08C215F67B6500A8E23F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDAD08BF15F67B6500A8E23F /* CoreMedia.framework */; };
+		DDAD08C315F67B6500A8E23F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDAD08C015F67B6500A8E23F /* CoreVideo.framework */; };
 		E91A4CCF151921AF0008F1A5 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E91A4CCE151921AF0008F1A5 /* FBDialog.bundle */; };
 		E92D47E7153CA75B00CB1E8A /* close_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E92D47E5153CA75B00CB1E8A /* close_button.png */; };
 		E92D47E8153CA75B00CB1E8A /* TJCLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E92D47E6153CA75B00CB1E8A /* TJCLoadingView.xib */; };
@@ -723,6 +726,9 @@
 		CD7C73AC13B95516006CFA19 /* ParticlePresets.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticlePresets.cpp; path = ../../src/hosts/ParticlePresets.cpp; sourceTree = SOURCE_ROOT; };
 		CD7C73AD13B95516006CFA19 /* ParticlePresets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticlePresets.h; path = ../../src/hosts/ParticlePresets.h; sourceTree = SOURCE_ROOT; };
 		CDDD307E1574AC7300C410A0 /* moai-fmod-designer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "moai-fmod-designer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDAD08BE15F67B6500A8E23F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DDAD08BF15F67B6500A8E23F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		DDAD08C015F67B6500A8E23F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		E91A4CCE151921AF0008F1A5 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBDialog.bundle; path = "../../3rdparty/facebookiOS/lib/facebook-ios-sdk/FBDialog.bundle"; sourceTree = "<group>"; };
 		E92D47E5153CA75B00CB1E8A /* close_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close_button.png; path = "../../3rdparty/tapjoyiOS-8.1.9/TapjoyConnect/Components/TJCCore/Views/close_button.png"; sourceTree = "<group>"; };
 		E92D47E6153CA75B00CB1E8A /* TJCLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TJCLoadingView.xib; path = "../../3rdparty/tapjoyiOS-8.1.9/TapjoyConnect/Components/TJCCore/Views/TJCLoadingView.xib"; sourceTree = "<group>"; };
@@ -824,6 +830,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDAD08C115F67B6500A8E23F /* AVFoundation.framework in Frameworks */,
+				DDAD08C215F67B6500A8E23F /* CoreMedia.framework in Frameworks */,
+				DDAD08C315F67B6500A8E23F /* CoreVideo.framework in Frameworks */,
 				6676D5D415100473004EA27A /* libfacebook_ios_sdk.a in Frameworks */,
 				07E9F73E13B50582006396F3 /* libmoai-ios.a in Frameworks */,
 				07E9F73F13B50582006396F3 /* libmoai-ios-3rdparty.a in Frameworks */,
@@ -980,6 +989,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DDAD08BE15F67B6500A8E23F /* AVFoundation.framework */,
+				DDAD08BF15F67B6500A8E23F /* CoreMedia.framework */,
+				DDAD08C015F67B6500A8E23F /* CoreVideo.framework */,
 				03CC90AE13B3C39D00B2724C /* libmoai.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,

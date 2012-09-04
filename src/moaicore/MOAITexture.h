@@ -29,7 +29,6 @@ private:
 	// for loading compressed data
 	void*				mData;
 	size_t				mDataSize;
-
 	//----------------------------------------------------------------//
 	static int			_load					( lua_State* L );
 
@@ -49,7 +48,7 @@ public:
 	static MOAIGfxState*	AffirmTexture			( MOAILuaState& state, int idx );
 	
 	bool					Init					( MOAILuaState& state, int idx );
-	void					Init					( MOAIImage& image, cc8* debugname );
+	void					Init					( MOAIImage& image, cc8* debugname, bool bSwapChannels = false );
 	void					Init					( MOAIImage& image, int srcX, int srcY, int width, int height, cc8* debugname );
 	void					Init					( cc8* filename, u32 transform, cc8* debugname = 0 );
 	void					Init					( USStream& stream, u32 transform, cc8* debugname );

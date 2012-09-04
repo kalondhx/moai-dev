@@ -140,7 +140,6 @@ void MOAITextureBase::CreateTextureFromImage ( MOAIImage& image ) {
 	// GL_UNSIGNED_SHORT_5_6_5
 	// GL_UNSIGNED_SHORT_4_4_4_4
 	// GL_UNSIGNED_SHORT_5_5_5_1
-
 	switch ( colorFormat ) {
 		
 		case USColor::A_8:
@@ -170,6 +169,9 @@ void MOAITextureBase::CreateTextureFromImage ( MOAIImage& image ) {
 			
 		default: return;
 	}
+	GLint castFormat = this->mGLInternalFormat;
+	if(mSwapChannels && this->mGLInternalFormat == GL_RGBA)
+		castFormat = GL_BGRA;
 
 	glTexImage2D (
 		GL_TEXTURE_2D,
@@ -178,7 +180,7 @@ void MOAITextureBase::CreateTextureFromImage ( MOAIImage& image ) {
 		this->mWidth,  
 		this->mHeight,  
 		0,
-		this->mGLInternalFormat,
+		castFormat,
 		this->mGLPixelType,  
 		image.GetBitmap ()
 	);
@@ -415,7 +417,9 @@ MOAITextureBase::MOAITextureBase () :
 	mMagFilter ( GL_NEAREST ),
 	mWrap ( GL_CLAMP_TO_EDGE ),
 	mTextureSize ( 0 ),
-	mIsDirty ( false ) {
+	mIsDirty ( false ),
+	mSwapChannels (false)
+{
 	
 	RTTI_BEGIN
 		RTTI_EXTEND ( MOAILuaObject )

@@ -69,6 +69,13 @@ MOAIGfxState* MOAITexture::AffirmTexture ( MOAILuaState& state, int idx ) {
 	gfxState = state.GetLuaObject < MOAIMultiTexture >( idx, false );
 	if ( gfxState ) return gfxState;
 	
+	if(state.IsType(idx, LUA_TNUMBER))
+	{
+		int nNumber = lua_tonumber(state, idx);
+		MOAITexture *pTex = (MOAITexture*)nNumber;
+		return pTex;
+	}
+	
 	MOAITexture* texture = new MOAITexture ();
 	if ( !texture->Init ( state, idx )) {
 		// TODO: report error
@@ -122,10 +129,10 @@ bool MOAITexture::Init ( MOAILuaState& state, int idx ) {
 }
 
 //----------------------------------------------------------------//
-void MOAITexture::Init ( MOAIImage& image, cc8* debugname ) {
+void MOAITexture::Init ( MOAIImage& image, cc8* debugname, bool bSwapChannels ) {
 
 	this->Clear ();
-	
+	this->mSwapChannels = bSwapChannels;
 	if ( image.IsOK ()) {
 		this->mImage.Copy ( image );
 		this->mDebugName = debugname;
@@ -232,7 +239,8 @@ bool MOAITexture::IsRenewable () {
 MOAITexture::MOAITexture () :
 	mTransform ( DEFAULT_TRANSFORM ),
 	mData ( 0 ),
-	mDataSize ( 0 ) {
+	mDataSize ( 0 )
+{
 	
 	RTTI_BEGIN
 		RTTI_EXTEND ( MOAITextureBase )
