@@ -87,6 +87,8 @@ void AKUIphoneInit ( UIApplication* application ) {
 	REGISTER_LUA_CLASS ( MOAIWebViewIOS )
 	REGISTER_LUA_CLASS ( MOAITwitterIOS )
 	REGISTER_LUA_CLASS ( MOAIVideoPlayer )
+	REGISTER_LUA_CLASS ( MOAICameraFeed )
+	REGISTER_LUA_CLASS ( MOAIImagePicker )
 	
 	#ifndef DISABLE_TAPJOY
 		REGISTER_LUA_CLASS ( MOAITapjoyIOS )

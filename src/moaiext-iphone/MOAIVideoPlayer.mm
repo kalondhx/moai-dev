@@ -183,6 +183,7 @@ void MOAIVideoPlayer::InitVideoWithFrameSize(int x, int y, int w, int h)
 	if(movieContainer == 0)
 	{
 	UIWindow* mWindow = [[ UIApplication sharedApplication ] keyWindow ];
+	[[mWindow.subviews objectAtIndex:0] setBackgroundColor:[UIColor clearColor]];
 	UIViewController* rootVC = [ mWindow rootViewController ];	
 	originalSize = CGRectMake(0, 0, w, h);
 	// I dont know what the hell I'm doing
@@ -272,6 +273,8 @@ void MOAIVideoPlayer::PlayVideo(const char* video, bool stream)
 void MOAIVideoPlayer::Stop()
 {
 	[mpPlayerController stop];
+	UIWindow* mWindow = [[ UIApplication sharedApplication ] keyWindow ];
+	[[mWindow.subviews objectAtIndex:0] setBackgroundColor:[UIColor blackColor]];
 	
 }
 

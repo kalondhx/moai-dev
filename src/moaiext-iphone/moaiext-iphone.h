@@ -11,6 +11,8 @@
 #import <moaiext-iphone/MOAIKeyboardIOS.h>
 #import <moaiext-iphone/MOAIMoviePlayerIOS.h>
 #import <moaiext-iphone/MOAIVideoPlayer.h>
+#import <moaiext-iphone/MOAIImagePicker.h>
+#import <moaiext-iphone/MOAICameraFeed.h>
 #import <moaiext-iphone/MOAINotificationsIOS.h>
 #import <moaiext-iphone/MOAISafariIOS.h>
 #import <moaiext-iphone/MOAIStoreKitListener.h>

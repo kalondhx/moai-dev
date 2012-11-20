@@ -3017,6 +3017,10 @@
 		CDF7131D141EBDAC00D650CA /* MOAILogMessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D967F4140479DF00017919 /* MOAILogMessages.cpp */; };
 		CDF71328141EBDEE00D650CA /* MOAIScriptDeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D967F814047A2500017919 /* MOAIScriptDeck.cpp */; };
 		CDF71329141EBDEF00D650CA /* MOAIScriptDeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 66D967F814047A2500017919 /* MOAIScriptDeck.cpp */; };
+		DDAD08B915F673D000A8E23F /* MOAICameraFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = DDAD08B515F673D000A8E23F /* MOAICameraFeed.h */; };
+		DDAD08BA15F673D000A8E23F /* MOAICameraFeed.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDAD08B615F673D000A8E23F /* MOAICameraFeed.mm */; };
+		DDAD08BB15F673D000A8E23F /* MOAIImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = DDAD08B715F673D000A8E23F /* MOAIImagePicker.h */; };
+		DDAD08BC15F673D000A8E23F /* MOAIImagePicker.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDAD08B815F673D000A8E23F /* MOAIImagePicker.mm */; };
 		DDF5107A15C84B3C00E0CD5A /* MOAIMD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DDF5107815C84B3C00E0CD5A /* MOAIMD5.cpp */; };
 		DDF5107B15C84B3C00E0CD5A /* MOAIMD5.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF5107915C84B3C00E0CD5A /* MOAIMD5.h */; };
 		DDF5108E15C84E0F00E0CD5A /* MOAIVideoPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF5108C15C84E0F00E0CD5A /* MOAIVideoPlayer.h */; };
@@ -5261,6 +5265,10 @@
 		CDF2C629151B17540009D47D /* MOAIWebViewDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MOAIWebViewDelegate.mm; path = "moaiext-iphone/MOAIWebViewDelegate.mm"; sourceTree = "<group>"; };
 		CDF7130D141EBC5C00D650CA /* MOAIGfxResource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MOAIGfxResource.cpp; path = ../../src/moaicore/MOAIGfxResource.cpp; sourceTree = SOURCE_ROOT; };
 		CDF7130E141EBC5C00D650CA /* MOAIGfxResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAIGfxResource.h; path = ../../src/moaicore/MOAIGfxResource.h; sourceTree = SOURCE_ROOT; };
+		DDAD08B515F673D000A8E23F /* MOAICameraFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAICameraFeed.h; path = "moaiext-iphone/MOAICameraFeed.h"; sourceTree = "<group>"; };
+		DDAD08B615F673D000A8E23F /* MOAICameraFeed.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MOAICameraFeed.mm; path = "moaiext-iphone/MOAICameraFeed.mm"; sourceTree = "<group>"; };
+		DDAD08B715F673D000A8E23F /* MOAIImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAIImagePicker.h; path = "moaiext-iphone/MOAIImagePicker.h"; sourceTree = "<group>"; };
+		DDAD08B815F673D000A8E23F /* MOAIImagePicker.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MOAIImagePicker.mm; path = "moaiext-iphone/MOAIImagePicker.mm"; sourceTree = "<group>"; };
 		DDF5107815C84B3C00E0CD5A /* MOAIMD5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MOAIMD5.cpp; sourceTree = "<group>"; };
 		DDF5107915C84B3C00E0CD5A /* MOAIMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAIMD5.h; sourceTree = "<group>"; };
 		DDF5108C15C84E0F00E0CD5A /* MOAIVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAIVideoPlayer.h; path = "moaiext-iphone/MOAIVideoPlayer.h"; sourceTree = "<group>"; };
@@ -7480,6 +7488,10 @@
 		CD524476135982480086DA15 /* moaiext-iphone */ = {
 			isa = PBXGroup;
 			children = (
+				DDAD08B515F673D000A8E23F /* MOAICameraFeed.h */,
+				DDAD08B615F673D000A8E23F /* MOAICameraFeed.mm */,
+				DDAD08B715F673D000A8E23F /* MOAIImagePicker.h */,
+				DDAD08B815F673D000A8E23F /* MOAIImagePicker.mm */,
 				CDF2C627151B14DD0009D47D /* aku */,
 				CDF2C626151B14C10009D47D /* reachability */,
 				CDF2C625151B14970009D47D /* util */,
@@ -10327,6 +10339,8 @@
 				669E287C15914B320037E24C /* WaveFileAudioSource.h in Headers */,
 				DDF5107B15C84B3C00E0CD5A /* MOAIMD5.h in Headers */,
 				DDF5108E15C84E0F00E0CD5A /* MOAIVideoPlayer.h in Headers */,
+				DDAD08B915F673D000A8E23F /* MOAICameraFeed.h in Headers */,
+				DDAD08BB15F673D000A8E23F /* MOAIImagePicker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -12705,6 +12719,8 @@
 				E9DE4582157EA38800630A7D /* MOAIMoviePlayerIOS.mm in Sources */,
 				DDF5107A15C84B3C00E0CD5A /* MOAIMD5.cpp in Sources */,
 				DDF5108F15C84E0F00E0CD5A /* MOAIVideoPlayer.mm in Sources */,
+				DDAD08BA15F673D000A8E23F /* MOAICameraFeed.mm in Sources */,
+				DDAD08BC15F673D000A8E23F /* MOAIImagePicker.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
