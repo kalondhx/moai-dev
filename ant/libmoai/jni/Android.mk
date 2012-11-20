@@ -21,6 +21,15 @@
 
 		include $(CLEAR_VARS)
 	endif
+	
+	LOCAL_PATH := $(ORIGINAL_LOCAL_PATH)
+	LOCAL_MODULE            := PurchaseManager
+	LOCAL_SRC_FILES         := dhxiap/libPurchaseManager.so
+	#LOCAL_EXPORT_C_INCLUDES := api/inc
+
+	include $(PREBUILT_SHARED_LIBRARY)
+
+	include $(CLEAR_VARS)	
 
 	LOCAL_PATH := $(ORIGINAL_LOCAL_PATH)
 
@@ -38,13 +47,15 @@
 
 	LOCAL_MODULE 	:= moai
 	LOCAL_ARM_MODE 	:= $(MY_ARM_MODE)
-	LOCAL_LDLIBS 	:= -llog -lGLESv1_CM -lGLESv2 crypto/libs/$(TARGET_ARCH_ABI)/libcrypto.a
+	LOCAL_LDLIBS 	:= -llog -lGLESv1_CM -lGLESv2 crypto/libs/$(TARGET_ARCH_ABI)/libcrypto.a 
 	LOCAL_CFLAGS	:= $(DISABLE_ADCOLONY) $(DISABLE_BILLING) $(DISABLE_CHARTBOOST) $(DISABLE_CRITTERCISM) $(DISABLE_FACEBOOK) $(DISABLE_NOTIFICATIONS) $(DISABLE_TAPJOY)
 	
 	ifeq ($(USE_FMOD),true)
 		LOCAL_CFLAGS	+= -DUSE_FMOD
 		LOCAL_SHARED_LIBRARIES := fmodex
 	endif
+	
+	LOCAL_SHARED_LIBRARIES := PurchaseManager
 
 	ifeq ($(USE_UNTZ),true)
 		LOCAL_CFLAGS	+= -DUSE_UNTZ
@@ -102,7 +113,7 @@
 	MY_HEADER_SEARCH_PATHS += $(MY_MOAI_ROOT)/3rdparty/tinyxml
 	MY_HEADER_SEARCH_PATHS += $(MY_MOAI_ROOT)/3rdparty/tlsf-2.0
 	MY_HEADER_SEARCH_PATHS += $(MY_MOAI_ROOT)/3rdparty/3rdparty/zlib-1.2.3
-
+	MY_HEADER_SEARCH_PATHS += $(MY_MOAI_ROOT)/3rdparty/dhxiap
 	ifeq ($(USE_FMOD),true)
 		MY_HEADER_SEARCH_PATHS += $(MY_MOAI_ROOT)/src/moaiext-fmod-ex
 		MY_HEADER_SEARCH_PATHS += $(FMOD_ANDROID_SDK_ROOT)/api/inc

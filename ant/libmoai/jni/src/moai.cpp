@@ -285,6 +285,9 @@
 		MOAIDialogAndroid::Affirm ();
 		REGISTER_LUA_CLASS ( MOAIDialogAndroid );
 
+		MOAIDHXIAPAndroid::Affirm ();
+		REGISTER_LUA_CLASS ( MOAIDHXIAPAndroid );
+		
 		MOAIMoviePlayerAndroid::Affirm ();
 		REGISTER_LUA_CLASS ( MOAIMoviePlayerAndroid );
 
