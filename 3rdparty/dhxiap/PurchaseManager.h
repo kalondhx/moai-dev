@@ -1,8 +1,6 @@
 #ifdef DHX_PLATFORM_ANDROID
 #include <jni.h>
 #endif
-#include <vector>
-#include <string>
 #pragma once
 
 namespace DHX
