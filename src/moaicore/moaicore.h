@@ -151,6 +151,7 @@
 #include <moaicore/MOAIWheelSensor.h>
 #include <moaicore/MOAIXmlParser.h>
 #include <moaicore/MOAIMD5.h>
+#include <moaicore/MOAIPurchaseController.h>
 
 #if USE_BOX2D
 	#include <moaicore/MOAIBox2DArbiter.h>

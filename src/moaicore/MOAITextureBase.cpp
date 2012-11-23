@@ -170,8 +170,8 @@ void MOAITextureBase::CreateTextureFromImage ( MOAIImage& image ) {
 		default: return;
 	}
 	GLint castFormat = this->mGLInternalFormat;
-	if(mSwapChannels && this->mGLInternalFormat == GL_RGBA)
-		castFormat = GL_BGRA;
+	//if(mSwapChannels && this->mGLInternalFormat == GL_RGBA)
+	//	castFormat = GL_BGRA;
 
 	glTexImage2D (
 		GL_TEXTURE_2D,
