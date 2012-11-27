@@ -93,7 +93,9 @@ void MOAIPurchaseController::Init()
 	_pm = GetPlatformPurchaseManager();
 	_pm->SetActivity(_activityName.c_str(), _activityMember.c_str());
 	_pm->SetDelegate(this);
+	_pm->SetSecret("36011eee133e4c08913252eb3b0aa4d2");
 	_pm->Init();
+	
 }
 
 //----------------------------------------------------------------//

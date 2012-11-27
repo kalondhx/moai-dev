@@ -22,7 +22,8 @@ namespace DHX
 		
 		virtual void RequestPurchase(const char* val);
 		virtual void RequestSubscription(const char* val);
-        void SetSecret(char* secret);
+        virtual void SetSecret(const char* secret);
+        virtual void RestorePurchases();
     };
 
 }

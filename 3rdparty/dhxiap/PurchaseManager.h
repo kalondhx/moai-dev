@@ -47,7 +47,8 @@ namespace DHX
 		virtual void OnPurchaseStateChanged(const char* itemID, int purchaseState, const char* json);
 		virtual void OnRequestResponse(const char* itemID, int responseID, const char* response);
 		virtual void RestorePurchases();
-		virtual void SetActivity(const char* className, const char* varName){};
+		virtual void SetActivity(const char* className, const char* varName){}
+        virtual void SetSecret(const char* secret){};
 	protected:
 		bool _billingEnabled;
 		DHX_PM_PLATFORM _platform;
