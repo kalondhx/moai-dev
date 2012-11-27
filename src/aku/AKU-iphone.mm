@@ -87,7 +87,6 @@ void AKUIphoneInit ( UIApplication* application ) {
 	REGISTER_LUA_CLASS ( MOAIWebViewIOS )
 	REGISTER_LUA_CLASS ( MOAITwitterIOS )
 	REGISTER_LUA_CLASS ( MOAIVideoPlayer )
-	REGISTER_LUA_CLASS ( MOAIPurchaseManageriOS )
 	REGISTER_LUA_CLASS ( MOAICameraFeed )
 	REGISTER_LUA_CLASS ( MOAIImagePicker )
 	

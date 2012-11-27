@@ -3021,6 +3021,8 @@
 		DD7A4A27165E85140090744C /* PurchaseManageriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7A4A25165E85140090744C /* PurchaseManageriOS.h */; };
 		DD7A4A2D165E8CCB0090744C /* MOAIPurchaseManageriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DD7A4A2B165E8CCB0090744C /* MOAIPurchaseManageriOS.h */; };
 		DD7A4A2E165E8CCB0090744C /* MOAIPurchaseManageriOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = DD7A4A2C165E8CCB0090744C /* MOAIPurchaseManageriOS.mm */; };
+		DDA571121663C9B90076A337 /* MOAIPurchaseController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DDA571101663C9B90076A337 /* MOAIPurchaseController.cpp */; };
+		DDA571131663C9B90076A337 /* MOAIPurchaseController.h in Headers */ = {isa = PBXBuildFile; fileRef = DDA571111663C9B90076A337 /* MOAIPurchaseController.h */; };
 		DDAD08B915F673D000A8E23F /* MOAICameraFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = DDAD08B515F673D000A8E23F /* MOAICameraFeed.h */; };
 		DDAD08BA15F673D000A8E23F /* MOAICameraFeed.mm in Sources */ = {isa = PBXBuildFile; fileRef = DDAD08B615F673D000A8E23F /* MOAICameraFeed.mm */; };
 		DDAD08BB15F673D000A8E23F /* MOAIImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = DDAD08B715F673D000A8E23F /* MOAIImagePicker.h */; };
@@ -5274,6 +5276,8 @@
 		DD7A4A29165E8C4D0090744C /* libDHXStore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libDHXStore.a; path = ../../3rdparty/dhxiap/libDHXStore.a; sourceTree = "<group>"; };
 		DD7A4A2B165E8CCB0090744C /* MOAIPurchaseManageriOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAIPurchaseManageriOS.h; path = "moaiext-iphone/MOAIPurchaseManageriOS.h"; sourceTree = "<group>"; };
 		DD7A4A2C165E8CCB0090744C /* MOAIPurchaseManageriOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MOAIPurchaseManageriOS.mm; path = "moaiext-iphone/MOAIPurchaseManageriOS.mm"; sourceTree = "<group>"; };
+		DDA571101663C9B90076A337 /* MOAIPurchaseController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MOAIPurchaseController.cpp; sourceTree = "<group>"; };
+		DDA571111663C9B90076A337 /* MOAIPurchaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOAIPurchaseController.h; sourceTree = "<group>"; };
 		DDAD08B515F673D000A8E23F /* MOAICameraFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAICameraFeed.h; path = "moaiext-iphone/MOAICameraFeed.h"; sourceTree = "<group>"; };
 		DDAD08B615F673D000A8E23F /* MOAICameraFeed.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MOAICameraFeed.mm; path = "moaiext-iphone/MOAICameraFeed.mm"; sourceTree = "<group>"; };
 		DDAD08B715F673D000A8E23F /* MOAIImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOAIImagePicker.h; path = "moaiext-iphone/MOAIImagePicker.h"; sourceTree = "<group>"; };
@@ -6188,6 +6192,8 @@
 		0324E4F913564BC7000ADC60 /* moaicore */ = {
 			isa = PBXGroup;
 			children = (
+				DDA571101663C9B90076A337 /* MOAIPurchaseController.cpp */,
+				DDA571111663C9B90076A337 /* MOAIPurchaseController.h */,
 				DDF5107615C84A3100E0CD5A /* md5 */,
 				E9A41AB9151AAB4600650276 /* render */,
 				CD148EFD1395AF4400A3F501 /* action */,
@@ -10367,6 +10373,7 @@
 				DD7A4A26165E85140090744C /* PurchaseManager.h in Headers */,
 				DD7A4A27165E85140090744C /* PurchaseManageriOS.h in Headers */,
 				DD7A4A2D165E8CCB0090744C /* MOAIPurchaseManageriOS.h in Headers */,
+				DDA571131663C9B90076A337 /* MOAIPurchaseController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -12748,6 +12755,7 @@
 				DDAD08BA15F673D000A8E23F /* MOAICameraFeed.mm in Sources */,
 				DDAD08BC15F673D000A8E23F /* MOAIImagePicker.mm in Sources */,
 				DD7A4A2E165E8CCB0090744C /* MOAIPurchaseManageriOS.mm in Sources */,
+				DDA571121663C9B90076A337 /* MOAIPurchaseController.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

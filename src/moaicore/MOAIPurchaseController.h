@@ -12,6 +12,7 @@ class MOAIPurchaseController : public MOAIGlobalClass < MOAIPurchaseController, 
 		static int	_init			( lua_State* L );
 		static int	_requestPurchase			( lua_State* L );
 		static int	_requestSubscription			( lua_State* L );
+		static int	_restorePurchases			( lua_State* L );
 		static int	_setListener	( lua_State* L );
 	
 	public:
@@ -30,8 +31,9 @@ class MOAIPurchaseController : public MOAIGlobalClass < MOAIPurchaseController, 
 		virtual void OnPurchaseStateChanged(const char* itemID, int purchaseState, const char* json);
 		virtual void OnRequestResponse(const char* itemID, int responseID, const char* response);
 		
-		void Init();
-		void RequestPurchase(const char* item);
+	void Init();
+	void RequestPurchase(const char* item);
+		void RestorePurchases();
 		void RequestSubscription(const char* item);
 		void SetActivity(const char* activityClassName, const char* staticActivityName);
 		

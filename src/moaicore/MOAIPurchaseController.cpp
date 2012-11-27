@@ -45,6 +45,12 @@ int MOAIPurchaseController::_requestPurchase ( lua_State* L ) {
 }
 
 
+int MOAIPurchaseController::_restorePurchases ( lua_State* L ) {
+	
+	MOAIPurchaseController::Get().RestorePurchases();
+	return 0;
+}
+
 int MOAIPurchaseController::_requestSubscription ( lua_State* L ) {
 	
 	MOAILuaState state ( L );
@@ -100,6 +106,7 @@ void MOAIPurchaseController::RegisterLuaClass ( MOAILuaState& state ) {
 		{ "init",			_init },
 		{ "requestPurchase",			_requestPurchase },
 		{ "setListener",	_setListener },
+		{ "restorePurchases",			_restorePurchases },
 		{ NULL, NULL }	
 	};
 
@@ -140,6 +147,12 @@ void MOAIPurchaseController::OnRequestResponse(const char* itemID, int responseI
 void MOAIPurchaseController::RequestPurchase(const char* item)
 {
 	_pm->RequestPurchase(item);
+}
+
+
+void MOAIPurchaseController::RestorePurchases()
+{
+	_pm->RestorePurchases();
 }
 
 void MOAIPurchaseController::RequestSubscription(const char* item)
