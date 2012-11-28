@@ -109,6 +109,8 @@ void MOAIPurchaseController::RegisterLuaClass ( MOAILuaState& state ) {
 		{ "requestPurchase",			_requestPurchase },
 		{ "setListener",	_setListener },
 		{ "restorePurchases",			_restorePurchases },
+		{ "requestSubscription",			_requestSubscription },
+		
 		{ NULL, NULL }	
 	};
 

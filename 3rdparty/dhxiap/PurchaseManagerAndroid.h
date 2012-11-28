@@ -16,13 +16,13 @@ namespace DHX
 		virtual void Init();
 		virtual void RequestPurchase(const char* val);
 		virtual void RequestSubscription(const char* val);
-		
+		virtual void RestorePurchases();
 		void InitAndroid();
 		void RequestPurchaseAndroid(jstring& val);
 		void RequestSubscriptionAndroid(jstring& val);
 		void SetJObjectRef(jobject ref);
 		static void SetActivity(jobject ref);
-		void SetActivity(const char* className, const char* varName);
+		virtual void SetActivity(const char* className, const char* varName);
 	protected:
 		jobject _DHXIAP;
 	};
